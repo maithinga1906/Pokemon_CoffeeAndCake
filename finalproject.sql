@@ -1,8 +1,9 @@
+drop database finalproject;
 CREATE DATABASE finalproject;
 USE finalproject;
 
 CREATE TABLE `customer` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL auto_increment primary key,
   `fullname` varchar(100) DEFAULT NULL,
   `phone` varchar(20) DEFAULT NULL,
   `address` varchar(150) DEFAULT NULL
@@ -10,7 +11,7 @@ CREATE TABLE `customer` (
 
 
 CREATE TABLE `products` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL auto_increment primary key,
   `name` varchar(255) DEFAULT NULL,
   `type` varchar(50) DEFAULT NULL,
   `price` float DEFAULT NULL,
@@ -28,7 +29,7 @@ INSERT INTO `products` (`id`, `name`, `type`, `price`, `image`) VALUES
 
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL auto_increment primary key,
   `fullName` varchar(100) DEFAULT NULL,
   `username` varchar(100) DEFAULT NULL,
   `pass` varchar(100) DEFAULT NULL,
@@ -40,7 +41,7 @@ INSERT INTO `users` (`id`, `fullName`, `username`, `pass`, `type`) VALUES
 (1, 'Mai Thi Nga', 'admin', 'admin', 'admin');
 
 CREATE TABLE `cart` (
-  id int(11) NOT NULL,
+  id int(11) NOT NULL auto_increment primary key,
   idPro int(11) DEFAULT NULL,
   quantity int(11) DEFAULT NULL,
   idUser int(11) DEFAULT NULL,
